@@ -5,11 +5,17 @@ This guide is to help you setup a bitcoin and lightning node on any computer tha
 
 
 ## Download the files
-
+Start a windows powershell or bash terminal and run this command.
+```sh
+#git clone https://github.com/findamak/bitcoin-lightning-node.git
+```
+Now run this command to change into that newly created directory.
+```sh
+#cd bitcoin-lightning-node
+```
 
 ## Installation
-
-Start a windows powershell or bash terminal. We will use docker compose to setup our project. Docker compose prepends the names of your images, containers, volumes, network with the name of your working directory. Use the below command to customise the project name to "lab" and begin the build of the project.
+We will use docker compose to setup our project. Docker compose prepends the names of your images, containers, volumes, network with the name of your working directory. Use the below command to customise the project name to "lab" and begin the build of the project.
 
 ```sh
 #docker compose -p lab up -d --build
