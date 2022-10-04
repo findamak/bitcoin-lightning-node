@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+    bitcoin:
+      build:
+        dockerfile: Dockerfile
+        context: ./bitcoin-node
+      hostname: bitcoin
+      volumes:
+        - bitcoin-vol-1:/var/lib/bitcoin
+      ports:
+        - "8333:8333"
+      networks:
+        - bitcoin-lightning
+      healthcheck:
+        test: ["CMD-SHELL", "bitcoin-cli -getinfo"]
+        interval: 30s
+        timeout: 5s
+        retries: 3
+        start_period: 5s
+    lightning:
+#      depends_on:
+#        - bitcoin
+      depends_on:
+        bitcoin:
+          condition: service_healthy
+      build:
+        dockerfile: Dockerfile
+        context: ./lightning-node
+      hostname: lightning
+      volumes:
+        - lnd-vol-1:/var/lib/gopath/.lnd
+      ports:
+        - "9735:9735"
+      networks:
+        - bitcoin-lightning
+      healthcheck:
+        test: ["CMD-SHELL", "lncli getinfo"]
+        interval: 30s
+        timeout: 5s
+        retries: 3
+        start_period: 5s
+
+volumes:
+  bitcoin-vol-1:
+  lnd-vol-1:
+
+networks:
+  bitcoin-lightning:
+      
