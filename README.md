@@ -64,16 +64,21 @@ Next we check the status of the bitcoin node. Run this command a few times, you 
 #docker exec -it lab-bitcoin-1 bitcoin-cli -getinfo
 ```
 
-Next we check the status of the lightning running. The "block_height" number should be increasing which means it is syncing with the bitcoin node.
+Next we check the status of the lightning node. The "block_height" number should be increasing which means it is syncing with the bitcoin node.
 ```sh
 #docker exec -it lab-lightning-1 bash -c "lncli getinfo | grep block_height"
 ```
 
-Now we want to store the password you used so that lightning can unlock the wallet automatically at startup. We also update the configuration file to now use this stored password and restart the node.
+For the purpose of this lab, we want to store the password you used so that lightning can unlock the wallet automatically at startup. We also update the configuration file to now use this stored password and restart the node.  
 ```sh
 #docker exec -it lab-lightning-1 bash -c "echo '<enter_password_you_used_earlier>' > /var/lib/gopath/lndwallet.txt"
+#docker exec -it lab-lightning-1 bash -c "chmod 400 /var/lib/gopath/lndwallet.txt"
 #docker exec -it lab-lightning-1 bash -c "sed -i 's/#wallet-unlock-password-file=/wallet-unlock-password-file=/' /var/lib/gopath/lnd.conf"
 #docker restart lab-lightning-1
+```
+If you are planning to use this lightning node in production, I recommend you not store the password in a file but instead manually unlock the wallet everytime you start the node by running this command.
+```sh
+#docker exec -it lab-lightning-1 bash -c "lncli unlock"
 ```
 
 Using the follwing commands, do a final check that the containers have a status of "Up" and are "(healthy)" and they are syncing with the main blockchain.
