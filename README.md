@@ -29,7 +29,7 @@ CONTAINER ID   IMAGE           COMMAND                  CREATED         STATUS  
 c40c9b3f5fa0   lab-bitcoin     "/bin/sh -c '/usr/sb…"   2 minutes ago   Up 2 minutes (healthy)     0.0.0.0:8333->8333/tcp   lab-bitcoin-1
 ```
 
-Then we need to create a new lightning wallet for our lightning node. Follow the instructions. Note I do not enter a passphrase to encrpyt the cipher seed.
+Then we need to create a new lightning wallet for our lightning node. Follow the instructions. Note I do not enter a passphrase to encrypt the cipher seed.
 ```sh
 #docker exec -it lab-lightning-1 lncli create
 Input wallet password:
@@ -69,7 +69,7 @@ Next we check the status of the lightning running. The "block_height" number sho
 #docker exec -it lab-lightning-1 bash -c "lncli getinfo | grep block_height"
 ```
 
-Now we want to store the password you used so that lightning can unlock the wallet automatically at startup. We also update configuration file to now use this stored password and restart the node.
+Now we want to store the password you used so that lightning can unlock the wallet automatically at startup. We also update the configuration file to now use this stored password and restart the node.
 ```sh
 #docker exec -it lab-lightning-1 bash -c "echo '<enter_password_you_used_earlier>' > /var/lib/gopath/lndwallet.txt"
 #docker exec -it lab-lightning-1 bash -c "sed -i 's/#wallet-unlock-password-file=/wallet-unlock-password-file=/' /var/lib/gopath/lnd.conf"
@@ -83,7 +83,7 @@ Using the follwing commands, do a final check that the containers have a status 
 #docker exec -it lab-lightning-1 bash -c "lncli getinfo | grep block_height"
 ```
 
-Lastly, check that the bitcoin and lightning application ports are exposed on your host so that you can expose these to the internet if you like. If working, you will get a blank screen. Use "Ctrl+]" and type "quit" to return to a prompt.
+Lastly, check that the bitcoin and lightning application ports are exposed on your host so that you can expose these to the internet if you like. If working, you will get a blank screen. Type `Ctrl+]` and then `quit` to return to a prompt.
 ```sh
 #telnet localhost 9735
 #telnet localhost 8333
