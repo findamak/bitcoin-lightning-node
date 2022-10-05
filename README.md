@@ -93,7 +93,9 @@ If you want to learn more about allowing other bitcoin and lightning nodes to ac
 ## Maintaining
 
 The commands below help you to easily start, stop or tear down your lab. 
+
 > Note that as of October 2022, syncing the full bitcoin mainnet consumes about **600GB** of disk space. 
+
 Also, the backup of these volumes will be left for another day.
 
 Use this command to stop the containers
