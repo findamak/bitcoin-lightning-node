@@ -76,12 +76,12 @@ For the purpose of this lab, we want to store the password you used so that ligh
 #docker exec -it lab-lightning-1 bash -c "sed -i 's/#wallet-unlock-password-file=/wallet-unlock-password-file=/' /var/lib/gopath/lnd.conf"
 #docker restart lab-lightning-1
 ```
-If you are planning to use this lightning node in production, I recommend you not store the password in a file but instead manually unlock the wallet everytime you start the node by running this command.
+If you are planning to use this lightning node in production, I recommend you not store the password in a file but instead manually unlock the wallet every time you start the node by running this command.
 ```sh
 #docker exec -it lab-lightning-1 bash -c "lncli unlock"
 ```
 
-Using the follwing commands, do a final check that the containers have a status of "Up" and are "(healthy)" and they are syncing with the main blockchain.
+Using the following commands, do a final check that the containers have a status of "Up" and are "(healthy)" and they are syncing with the main blockchain.
 ```sh
 #docker ps -a
 #docker exec -it lab-bitcoin-1 bitcoin-cli -getinfo | grep Blocks
@@ -99,7 +99,7 @@ If you want to learn more about allowing other bitcoin and lightning nodes to ac
 
 The commands below help you to easily start, stop or tear down your lab. 
 
-> Note that as of October 2022, syncing the full bitcoin mainnet consumes about **600GB** of disk space. 
+> Note that as of October 2022, syncing the full bitcoin mainnet consumes about **500GB** of disk space. 
 
 Also, the backup of these volumes will be left for another day.
 
