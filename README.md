@@ -1,7 +1,13 @@
 # Bitcoin and lightning node using Docker 
 
 ## Introduction
-This guide is to help you setup a bitcoin and lightning node on any computer that is capable of running docker. You will need to have docker desktop installed. If not, visit the [Docker website](https://www.docker.com/). You will also need Git. Go here to download and install [Git for windows](https://gitforwindows.org/). On linux use your package manager to install git. In terms of hardware requirements, these are the recommendations:
+This guide is to help you setup a bitcoin and lightning node on any computer that is capable of running docker. It should take you no longer than 10 minutes to get this setup. Although this guide is more suited for setting up a lab to let you learn about bitcoin and lightning, there is nothing stopping you from running these containers long term. These books on bitcoin and lightning are  worth exploring. 
+* [Lightning Book](https://github.com/lnbook/lnbook)
+* [Bitcoin Book](https://github.com/bitcoinbook/bitcoinbook)
+
+**If you plan on putting any funds into the lightning wallet, I highly recommend you read and understand the lightning book before you do so, otherwise you risk loosing your funds.**
+
+You will need to have docker desktop installed. If not, visit the [Docker website](https://www.docker.com/). You will also need Git. Go here to download and install [Git for windows](https://gitforwindows.org/). On linux use your package manager to install Git. In terms of hardware requirements, these are the recommendations:
 * 2 or 4 core 64bit CPU.
 * At least 4GB of RAM.
 * A reliable internet connection.
@@ -97,11 +103,7 @@ Lastly, check that the bitcoin and lightning application ports are exposed on yo
 #telnet localhost 9735
 #telnet localhost 8333
 ```
-If you want to learn more about allowing other bitcoin and lightning nodes to access your nodes, have a look at [Bitcoin Full Node documentation](https://bitcoin.org/en/full-node#network-configuration) and the [Lightning network daemon](https://docs.lightning.engineering/lightning-network-tools/lnd) documentation. These books on bitcoin and lightning are also worth exploring. 
-* [Lightning Book](https://github.com/lnbook/lnbook)
-* [Bitcoin Book](https://github.com/bitcoinbook/bitcoinbook)
-
-**If you plan on putting any funds into the lightning wallet, I highly recommend you read and understand the lightning book before you do so, otherwise you risk loosing your funds.**
+If you want to learn more about allowing other bitcoin and lightning nodes to access your nodes, have a look at [Bitcoin Full Node documentation](https://bitcoin.org/en/full-node#network-configuration) and the [Lightning network daemon](https://docs.lightning.engineering/lightning-network-tools/lnd) documentation. 
 
 ## Maintaining
 
