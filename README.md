@@ -93,7 +93,9 @@ Lastly, check that the bitcoin and lightning application ports are exposed on yo
 #telnet localhost 9735
 #telnet localhost 8333
 ```
-If you want to learn more about allowing other bitcoin and lightning nodes to access your nodes, have a look at [Bitcoin Full Node documentation](https://bitcoin.org/en/full-node#network-configuration) and the [Lightning network daemon](https://docs.lightning.engineering/lightning-network-tools/lnd) documentation.
+If you want to learn more about allowing other bitcoin and lightning nodes to access your nodes, have a look at [Bitcoin Full Node documentation](https://bitcoin.org/en/full-node#network-configuration) and the [Lightning network daemon](https://docs.lightning.engineering/lightning-network-tools/lnd) documentation. These books on bitcoin and lightning are also worth exploring.
+* [Lightning Book](https://github.com/lnbook/lnbook)
+* [Bitcoin Book](https://github.com/bitcoinbook/bitcoinbook)
 
 ## Maintaining
 
@@ -117,3 +119,7 @@ Use this to tear down the lab.
 ```sh
 #docker compose -p lab down --volumes
 ```
+
+## Donations
+
+If you found this guide useful, please consider donating some SATS via lightning to this wallet address makka@fountain.fm.
