@@ -97,9 +97,11 @@ Lastly, check that the bitcoin and lightning application ports are exposed on yo
 #telnet localhost 9735
 #telnet localhost 8333
 ```
-If you want to learn more about allowing other bitcoin and lightning nodes to access your nodes, have a look at [Bitcoin Full Node documentation](https://bitcoin.org/en/full-node#network-configuration) and the [Lightning network daemon](https://docs.lightning.engineering/lightning-network-tools/lnd) documentation. These books on bitcoin and lightning are also worth exploring.
+If you want to learn more about allowing other bitcoin and lightning nodes to access your nodes, have a look at [Bitcoin Full Node documentation](https://bitcoin.org/en/full-node#network-configuration) and the [Lightning network daemon](https://docs.lightning.engineering/lightning-network-tools/lnd) documentation. These books on bitcoin and lightning are also worth exploring. 
 * [Lightning Book](https://github.com/lnbook/lnbook)
 * [Bitcoin Book](https://github.com/bitcoinbook/bitcoinbook)
+
+**If you plan on putting any funds into the lightning wallet, I highly recommend you read and understand the lightning book before you do so, otherwise you risk loosing your funds.**
 
 ## Maintaining
 
