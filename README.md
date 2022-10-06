@@ -1,7 +1,11 @@
 # Bitcoin and lightning node using Docker 
 
 ## Introduction
-This guide is to help you setup a bitcoin and lightning node on any computer that is capable of running docker. You will need to have docker desktop installed. If not, visit the [Docker website](https://www.docker.com/). You will also need Git. Go here to download and install [Git for windows](https://gitforwindows.org/). On linux use your package manager to install git.
+This guide is to help you setup a bitcoin and lightning node on any computer that is capable of running docker. You will need to have docker desktop installed. If not, visit the [Docker website](https://www.docker.com/). You will also need Git. Go here to download and install [Git for windows](https://gitforwindows.org/). On linux use your package manager to install git. In terms of hardware requirements, these are the recommendations:
+* 2 or 4 core 64bit CPU.
+* At least 4GB of RAM.
+* A reliable internet connection.
+* Note that as of October 2022, syncing the full bitcoin mainnet consumes about **500GB** of disk space. So a hard drive with at least 1TB of free space is recommended if you plan on running this node for a while.
 
 
 ## Download the files
@@ -100,10 +104,6 @@ If you want to learn more about allowing other bitcoin and lightning nodes to ac
 ## Maintaining
 
 The commands below help you to easily start, stop or tear down your lab. 
-
-> Note that as of October 2022, syncing the full bitcoin mainnet consumes about **500GB** of disk space. 
-
-Also, the backup of these volumes will be left for another day.
 
 Use this command to stop the containers
 ```sh
