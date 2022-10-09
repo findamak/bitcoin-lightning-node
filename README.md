@@ -135,7 +135,7 @@ Use this to start the containers
 #docker compose -p lab start
 ```
 
-Use this to tear down the lab.
+Use this to tear down the lab. **This will destroy all data including your wallet***
 ```sh
 #docker compose -p lab down --volumes
 ```
