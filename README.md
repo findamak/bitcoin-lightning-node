@@ -104,7 +104,7 @@ We also update the configuration file to now use this stored password and restar
 ```
 If you are planning to use this lightning node in production, I recommend you not store the password in a file but instead manually unlock the wallet every time you start the node by running this command.
 ```sh
-#docker exec -it lab-lightning-1 bash -c "lncli unlock"
+#docker exec -it lab-lightning-1 lncli unlock
 ```
 
 Do a final check that the containers have a status of "Up" and are "(healthy)" and they are syncing with the main blockchain. i.e The block numbers are increasing as you run the below checks a few times.
